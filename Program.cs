@@ -37,8 +37,31 @@ namespace ShootingDice
 
             bigMouth.Play(player2);
 
+            Console.WriteLine("-------------------");
+
+            Player lucky = new OneHigherPlayer();
+            lucky.Name = "Lucky B";
+
+            lucky.Play(large);
+
+            Console.WriteLine("-------------------");
+
+            Player notAnAlien = new HumanPlayer();
+            notAnAlien.Name = "Brak";
+
+            notAnAlien.Play(bigMouth);
+
+            Console.WriteLine("-------------------");
+
+            Player mouthy = new CreativeSmackTalkingPlayer();
+            mouthy.Name = "Snaps";
+
+            mouthy.Play(bigMouth);
+
+            Console.WriteLine("-------------------");
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, bigMouth
+                player1, player2, player3, large, bigMouth, lucky, notAnAlien, mouthy
             };
 
             PlayMany(players);

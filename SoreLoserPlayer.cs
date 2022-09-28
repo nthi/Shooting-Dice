@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ShootingDice
 {
@@ -13,27 +14,41 @@ namespace ShootingDice
     {
         public override void Play(Player other)
         {
+
+
+            try
+            {
             // Call roll for "this" object and for the "other" object
             int myRoll = Roll();
             int otherRoll = other.Roll();
-            //if (roll means player loses)
-            //throw new InvalidOperationException();
-            //then do a try/catch
 
-            Console.WriteLine($"{Name} rolls a {myRoll}");
-            Console.WriteLine($"{other.Name} rolls a {otherRoll}");
-            if (myRoll > otherRoll)
+            if (myRoll < otherRoll)
             {
-                Console.WriteLine($"{Name} Wins!");
+                throw new InvalidOperationException();
             }
-            else if (myRoll < otherRoll)
-            {
-                Console.WriteLine($"{other.Name} Wins!");
+            // //if (roll means player loses)
+            // //throw new InvalidOperationException();
+            // //then do a try/catch
+
+                Console.WriteLine($"{Name} rolls a {myRoll}");
+                Console.WriteLine($"{other.Name} rolls a {otherRoll}");
+                if (myRoll > otherRoll)
+                {
+                    Console.WriteLine($"{Name} Wins!");
+                }
+                else if (myRoll < otherRoll)
+                {
+                    Console.WriteLine($"{other.Name} Wins!");
+                }
+                else
+                {
+                    // if the rolls are equal it's a tie
+                    Console.WriteLine("It's a tie");
+                }
             }
-            else
+            catch (InvalidOperationException)
             {
-                // if the rolls are equal it's a tie
-                Console.WriteLine("It's a tie");
+                Console.WriteLine("Everything went disastrously wrong!");
             }
         }
     }

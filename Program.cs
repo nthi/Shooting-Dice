@@ -60,8 +60,15 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            Player tableFlip = new SoreLoserPlayer();
+            tableFlip.Name = "Sport";
+
+            tableFlip.Play(player3);
+
+            Console.WriteLine("-------------------");
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, bigMouth, lucky, notAnAlien, mouthy
+                player1, player2, player3, large, bigMouth, lucky, notAnAlien, mouthy, tableFlip
             };
 
             PlayMany(players);

@@ -74,8 +74,16 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            Player cheatHighGuy = new SoreLoserUpperHalfPlayer();
+            cheatHighGuy.Name = "Badds";
+
+            cheatHighGuy.Play(player2);
+
+            Console.WriteLine("-------------------");
+
+
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, bigMouth, lucky, notAnAlien, mouthy, tableFlip, highguy
+                player1, player2, player3, large, bigMouth, lucky, notAnAlien, mouthy, tableFlip, highguy, cheatHighGuy
             };
 
             PlayMany(players);

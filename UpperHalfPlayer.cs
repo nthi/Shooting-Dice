@@ -10,7 +10,7 @@ namespace ShootingDice
         public override int Roll()
         {
             // Return a random number between 1 and DiceSize
-            return new Random().Next(4, 6);
+            return new Random().Next(4, 6) + 1;
         }
 
         public override void Play(Player other)
